@@ -22,6 +22,7 @@ jobs:
         with:
          java-version: 17
          distribution: 'zulu'
+         cache: maven
 
       - name: "Lancement des tests"
         run: mvn test  
