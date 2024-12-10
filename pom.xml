@@ -47,4 +47,26 @@
         <junit.version>5.9.3</junit.version>
     </properties>
 
+    <plugins>
+    <!-- Plugin JaCoCo pour le reporting de couverture de code -->
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.8</version> <!-- Utiliser la dernière version stable de JaCoCo -->
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                    <phase>prepare-package</phase> <!-- Générer le rapport pendant la phase prepare-package -->
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+
 </project>
