@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-java@v4.5.0
         with:
          java-version: 17
-         distribution: 'zulu'
+         distribution: 'temurin'
          cache: maven
 
       - name: "Lancement des tests"
