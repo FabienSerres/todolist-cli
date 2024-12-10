@@ -50,3 +50,13 @@ jobs:
           DB_USER: ${{ secrets.POSTGRE_ID }}
           DB_PASSWORD: ${{ secrets.POSTGRE_MDP }}
         run: mvn test
+
+      - name: Generate JaCoCo Coverage Report
+        run: mvn jacoco:report
+
+      - name: Upload JaCoCo Coverage Report
+        if: success()
+        run: |
+          echo "Uploading JaCoCo Coverage Report..."
+          cat target/site/jacoco/index.html >> $GITHUB_STEP_SUMMARY
+          echo "Coverage report is available in the summary."
