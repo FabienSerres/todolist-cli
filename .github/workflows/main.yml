@@ -47,6 +47,6 @@ jobs:
       - name: Run tests
         env:
           DB_URL: "jdbc:postgresql://localhost:5432/task_manager"
-          DB_USER: ${{ sesecrets.POSTGRE_ID }}
-          DB_PASSWORD: ${{ sesecrets.POSTGRE_MDP }}
+          DB_USER: ${{ secrets.POSTGRE_ID }}
+          DB_PASSWORD: ${{ secrets.POSTGRE_MDP }}
         run: mvn test
